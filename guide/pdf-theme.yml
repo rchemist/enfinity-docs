@@ -1,0 +1,11 @@
+extends: default
+font:
+  catalog:
+    merge: true
+    Open Sans:
+      normal: NotoSans-Regular.ttf
+      bold: NotoSans-Bold.ttf
+      italic: NotoSans-Italic.ttf
+      bold_italic: NotoSans-BoldItalic.ttf
+base:
+  font_family: Open Sans

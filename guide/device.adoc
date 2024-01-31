@@ -504,7 +504,7 @@ AccessToken 은 발행 후 1시간 이후 만료되어 더 이상 사용할 수 
 이 API 의 사용 방법은 <<meter-api-meter-graph, 최근 검침 내역 확인>> API와 동일합니다.
 자세한 설명은 해당 챕터를 참고하세요.
 
-[#restful-api-check-proces]
+[#restful-api-check-process]
 === 완료되지 않은 모든 장비 제어 명령 확인
 
 각 송수신기 또는 송수신기의 하위 모듈에 대한 완료되지 않은 모든 제어 명령을 확인합니다.
@@ -662,7 +662,7 @@ MODULE: 송수신기 하위 모듈 대상 업데이트 정보
 [#restful-api-check-firmware-resource]
 === 장비 펌웨어 리소스 확인
 
-<<mqtt-api-control-response, MQTT 장비 제어 명령 수행 확인>> 의 결과로 `transceiverControlId` 값을 갖고 있는 경우 해당 명령에 의한 상세 업데이트 정보를 확인할 수 있습니다.
+<<restful-api-check-process, 완료되지 않은 모든 장비 제어 명령 확인>> API 나 <<mqtt-api-control-subscribe, MQTT 장비 제어 명령 수신>> 의 결과로 `transceiverControlId` 값을 갖고 있는 경우 해당 명령에 의한 상세 업데이트 정보를 확인할 수 있습니다.
 
 이 API 의 결과값은 <<restful-api-check-firmware, 장비 펌웨어 업데이트 정보 확인>> 의 결과와 유사하며, 리턴값이 복수가 아니라 단수라는 차이만 있습니다.
 
@@ -829,7 +829,7 @@ MODULE: 모듈에 대한 명령. 이 값이 MODULE 인 경우 port 를 설정해
 [#restful-api-control-process]
 === 장비 제어 명령 수행 상태 전송
 
-각 장비에서 <<mqtt-api-control-response, MQTT 장비 제어 명령 수행 확인>> 등의 API 를 통해 제어 명령을 수신한 경우 해당 명령을 수신했음을 서버로 전송해야 합니다.
+각 장비에서 <<mqtt-api-control-subscribe, MQTT 장비 제어 명령 수신>> 등의 API 를 통해 제어 명령을 수신한 경우 해당 명령을 수신했음을 서버로 전송해야 합니다.
 
 이 API 는 장비가 제어 명령을 수신한 후, 처리 현황에 따른 각 상태를 서버에 전송할 때 사용합니다.
 
@@ -848,6 +848,16 @@ MODULE: 모듈에 대한 명령. 이 값이 MODULE 인 경우 port 를 설정해
 {blank}
 
 .요청 BODY 정보
+
+[source,json]
+----
+{
+  "id": "전달 받은 transceiverControlId",
+  "status": "PROCESSING",
+  "message": ""
+}
+----
+
 [cols="<.^2,<.^2,<.^2,<.^4"]
 |===
 |필드 |타입 | 필수 |설명
@@ -1146,23 +1156,8 @@ subscribe
 
 <<restful-api-control-create, 장비 제어 명령 수행>> 의 결과값과 동일합니다.
 
-각 장비에서 이 토픽을 수신하면, 반드시 해당 명령에 대한 현재 수행 상태를 전송해야 합니다.
+각 장비에서 이 토픽을 수신하면, <<restful-api-control-process, 장비 제어 명령 수행 상태 전송>> 를 호출해 반드시 해당 명령에 대한 현재 수행 상태를 전송해야 합니다.
 
-아래 <<mqtt-api-control-response, MQTT 장비 제어 명령 수행 확인>> 토픽을 발행하거나, <<restful-api-control-process, 장비 제어 명령 수행 상태 전송>> 를 호출해 제어 명령의 수행 상태를 전송할 수 있습니다.
 
 {blank}
 {blank}
-
-[#mqtt-api-control-response]
-=== MQTT 장비 제어 명령 수행 확인
-
-이 토픽은 <<restful-api-control-process, 장비 제어 명령 수행 상태 전송>> API 와 완전히 동일합니다.
-
-전송 방식에 따라 RESTful API 냐, MQTT 냐 하는 프로토콜의 차이가 있을 뿐이므로, 선호하는 방식으로 정보를 전달하면 됩니다.
-
-<<mqtt-api-control-subscribe, MQTT 장비 제어 명령 수신>> 또는
-
-- 채널 유형 publish
-
--
-
