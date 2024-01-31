@@ -1,4 +1,4 @@
-= enfinity-rems 연동 가이드
+= enfinity-rems 연동 가이드 v0.1
 :toc: left
 :toc-title: enfinity-rems 연동 가이드
 :toclevels: 2
@@ -14,11 +14,15 @@
 :sectnumlevels: 6
 :author: kunner@rchemist.io
 :authorname: Kunner, Kil.
+:version-label: v0.1
 
 [#intro]
 == 소개
 
 enfinity-REMS 서비스에 RTU 등 송수신기 장비를 연동하는 방법에 대해 설명합니다.
+
+- 문서 버전: v0.1
+- 최종 수정일: 2024-01-31
 
 [#devices]
 == 장비 Devices
