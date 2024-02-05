@@ -4,5 +4,5 @@
 
 [enfinity 서비스 매뉴얼]()
 
-[enfinity-rems 연동 가이드 v0.1](./guide/device.html)
+[enfinity-rems 연동 가이드 v0.1](./guide/device.adoc)
 
