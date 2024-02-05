@@ -8499,10 +8499,10 @@ span.icon > .fa {
 <div class="ulist">
 <ul>
 <li>
-<p>문서 버전: v0.1</p>
+<p>문서 버전: v0.1.1</p>
 </li>
 <li>
-<p>최종 수정일: 2024-01-31</p>
+<p>최종 수정일: 2024-02-05</p>
 </li>
 </ul>
 </div>
@@ -10425,6 +10425,7 @@ publish</p>
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">{
     "transceiverId": "장비 등록 시 전달 받은 transceiverId",
+    "tenantAlias": "장비의 tenantAlias",
     "port": 0,
     "data": "140101000000dc0096000a00dc0096000a03e7025800000000ffffff0001"
 }</code></pre>
@@ -10495,17 +10496,8 @@ subscribe</p>
 <div class="paragraph">
 <p><strong>Payload</strong></p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">{
-    "transceiverId": "장비 등록 시 전달 받은 transceiverId",
-    "port": 0,
-    "data": "140101000000dc0096000a00dc0096000a03e7025800000000ffffff0001"
-}</code></pre>
-</div>
-</div>
 <div class="paragraph">
-<p><a href="#restful-api-control-create">장비 제어 명령 수행</a> 의 결과값과 동일합니다.</p>
+<p><a href="#restful-api-control-create">장비 제어 명령 수행</a> 의 결과값과 동일한 정보를 수신합니다.</p>
 </div>
 <div class="paragraph">
 <p>각 장비에서 이 토픽을 수신하면, <a href="#restful-api-control-process">장비 제어 명령 수행 상태 전송</a> 를 호출해 반드시 해당 명령에 대한 현재 수행 상태를 전송해야 합니다.</p>
@@ -10520,7 +10512,7 @@ subscribe</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-01-31 20:26:37 +0900
+Last updated 2024-02-05 14:00:58 +0900
 </div>
 </div>
 </body>
