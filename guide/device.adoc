@@ -1105,6 +1105,7 @@ _VERSION_PREFIX는 MQTT 버전 별로 다른 URI 접두어를 의미합니다_
 ----
 {
     "transceiverId": "장비 등록 시 전달 받은 transceiverId",
+    "tenantAlias": "장비의 tenantAlias",
     "port": 0,
     "data": "140101000000dc0096000a00dc0096000a03e7025800000000ffffff0001"
 }
@@ -1145,16 +1146,7 @@ subscribe
 
 **Payload**
 
-[source,json]
-----
-{
-    "transceiverId": "장비 등록 시 전달 받은 transceiverId",
-    "port": 0,
-    "data": "140101000000dc0096000a00dc0096000a03e7025800000000ffffff0001"
-}
-----
-
-<<restful-api-control-create, 장비 제어 명령 수행>> 의 결과값과 동일합니다.
+<<restful-api-control-create, 장비 제어 명령 수행>> 의 결과값과 동일한 정보를 수신합니다.
 
 각 장비에서 이 토픽을 수신하면, <<restful-api-control-process, 장비 제어 명령 수행 상태 전송>> 를 호출해 반드시 해당 명령에 대한 현재 수행 상태를 전송해야 합니다.
 
