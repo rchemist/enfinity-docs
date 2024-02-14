@@ -66,9 +66,9 @@ _단, 에너지공단 REMS 의 경우에는 태양광 RTU에 한해 0 ~ 3 까지
 |===
 |구분 |URL |설명
 
-|웹서비스 |https://dev.enfinity.kr |관리도구 서비스 사이트
-|API |https://dev.api.enfinity.kr |장비 -&gt; 서버 HTTP API 서버 {blank}
-|METER-API |https://dev.meter.enfinity.kr |장비 -&gt; 서버 검침정보 전송 서버
+|웹서비스 |https://enfinity-front.dev.rchemist.io |관리도구 서비스 사이트
+|API |https://enfinity-api.dev.rchemist.io |장비 -&gt; 서버 HTTP API 서버 {blank}
+|METER-API |https://enfinity-meter.dev.rchemist.io |장비 -&gt; 서버 검침정보 전송 서버
 |MQTT |tcp://dev.rchemist.io |MQTT 서버
 |===
 
